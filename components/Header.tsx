@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useRouter } from "next/router";
 import { Box, Button, Flex, Image, useColorMode } from "@chakra-ui/react";
-import Link from "next/link";
+import a from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { FaDiscord, FaInstagram } from "react-icons/fa";
 import { IoMoon, IoSunny } from "react-icons/io5";
@@ -32,7 +32,7 @@ const Header: FC = () => {
       flexDir={["column", "column", "row"]}
     >
       <Box fontWeight="bold" fontSize="lg" cursor="pointer">
-        <Link href="/">
+        <a href="/">
           <Image
             w={200}
             src={
@@ -42,7 +42,7 @@ const Header: FC = () => {
             }
             alt="LOGO"
           />
-        </Link>
+        </a>
       </Box>
       <Box>
         {scrollLink.map((v, i) => {
@@ -56,16 +56,16 @@ const Header: FC = () => {
         })}
       </Box>
       <Flex alignItems="center" my={[4, 4, 0]}>
-        <Link href={openseaURL}>
+        <a href={openseaURL} target="_blank" rel="noreferrer">
           <Button variant="ghost" size={["xs", "xs", "sm"]}>
             <Image src="../images/opensea.png" alt="opensea" w={6} />
           </Button>
-        </Link>
-        <Link href={instagramURL}>
+        </a>
+        <a href={instagramURL}>
           <Button variant="ghost" size={["xs", "xs", "sm"]}>
             <FaInstagram size={24} />
           </Button>
-        </Link>
+        </a>
         <Box onClick={toggleColorMode}>
           {colorMode === "light" ? (
             <Button variant="ghost" size={["xs", "xs", "sm"]}>
@@ -78,14 +78,11 @@ const Header: FC = () => {
           )}
         </Box>
         <Box>
-          <Link
-            href={router.asPath}
-            locale={router.locale === "en" ? "ko" : "en"}
-          >
+          <a href={router.asPath} locale={router.locale === "en" ? "ko" : "en"}>
             <Button variant="ghost" size={["xs", "xs", "sm"]}>
               {router.locale === "en" ? "EN" : "KO"}
             </Button>
-          </Link>
+          </a>
         </Box>
       </Flex>
     </Flex>

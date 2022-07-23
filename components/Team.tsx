@@ -14,7 +14,7 @@ const teamCardConfig = [
   },
   {
     name: "신경아",
-    position: "Manager",
+    position: "Project Manager",
     image: "002.jpg",
     color: "gray",
     animation: "tada",
@@ -28,7 +28,7 @@ const teamCardConfig = [
   },
   {
     name: "정승익",
-    position: "Metaverse Planner",
+    position: "Metaverse Plan",
     image: "004.jpg",
     color: "gray",
     animation: "tada",
