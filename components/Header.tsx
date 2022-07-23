@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { useRouter } from "next/router";
 import { Box, Button, Flex, Image, useColorMode } from "@chakra-ui/react";
-import a from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { FaDiscord, FaInstagram } from "react-icons/fa";
 import { IoMoon, IoSunny } from "react-icons/io5";
+import Link from "next/link";
 
 // @ 로고 이미지는 public/images를 교체하시면 됩니다. URL은 우리 프로젝트의 URL을 작성하시면 됩니다.
 const logoImage = "logo_black.png";
@@ -32,7 +32,7 @@ const Header: FC = () => {
       flexDir={["column", "column", "row"]}
     >
       <Box fontWeight="bold" fontSize="lg" cursor="pointer">
-        <a href="/">
+        <Link href="/">
           <Image
             w={200}
             src={
@@ -42,7 +42,7 @@ const Header: FC = () => {
             }
             alt="LOGO"
           />
-        </a>
+        </Link>
       </Box>
       <Box>
         {scrollLink.map((v, i) => {
@@ -56,7 +56,7 @@ const Header: FC = () => {
         })}
       </Box>
       <Flex alignItems="center" my={[4, 4, 0]}>
-        <Link href={openseaURL} rel="noreferrer">
+        <Link href={openseaURL} passHref={true}>
           <Button variant="ghost" size={["xs", "xs", "sm"]}>
             <Image src="../images/opensea.png" alt="opensea" w={6} />
           </Button>
@@ -78,11 +78,14 @@ const Header: FC = () => {
           )}
         </Box>
         <Box>
-          <a href={router.asPath} locale={router.locale === "en" ? "ko" : "en"}>
+          <Link
+            href={router.asPath}
+            locale={router.locale === "en" ? "ko" : "en"}
+          >
             <Button variant="ghost" size={["xs", "xs", "sm"]}>
               {router.locale === "en" ? "EN" : "KO"}
             </Button>
-          </a>
+          </Link>
         </Box>
       </Flex>
     </Flex>
