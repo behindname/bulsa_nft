@@ -11,7 +11,6 @@ const Home: NextPage = () => {
     <>
       <Title />
       <Story />
-      <Roadmap />
       <Team />
       <Footer />
     </>

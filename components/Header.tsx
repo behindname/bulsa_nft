@@ -8,13 +8,12 @@ import { IoMoon, IoSunny } from "react-icons/io5";
 
 // @ 로고 이미지는 public/images를 교체하시면 됩니다. URL은 우리 프로젝트의 URL을 작성하시면 됩니다.
 const logoImage = "logo_black.png";
-const logoImageDark = "logo_white.png";
-const openseaURL = "https://testnets.opensea.io/collection/projectlion-nft";
-const discordURL = "https://discord.gg/JV4whBWNPs";
-const instagramURL = "https://www.instagram.com/projectlion.io/";
+const logoImageDark = "logo_black.png";
+const openseaURL = "https://testnets.opensea.io/collection/bulsa-000";
+const instagramURL = "https://www.instagram.com/irag.jo/";
 
 const Header: FC = () => {
-  const scrollLink = ["Story", "Roadmap", "Team"];
+  const scrollLink = ["Title", "Story", "Team"];
 
   const router = useRouter();
 
@@ -60,11 +59,6 @@ const Header: FC = () => {
         <Link href={openseaURL}>
           <Button variant="ghost" size={["xs", "xs", "sm"]}>
             <Image src="../images/opensea.png" alt="opensea" w={6} />
-          </Button>
-        </Link>
-        <Link href={discordURL}>
-          <Button variant="ghost" size={["xs", "xs", "sm"]}>
-            <FaDiscord size={24} />
           </Button>
         </Link>
         <Link href={instagramURL}>

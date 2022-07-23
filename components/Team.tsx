@@ -6,31 +6,31 @@ import TeamCard from "./TeamCard";
 // @ name: 팀원 이름, position: 포지션, image: public/images에 있는 이미지 이름, color: color 이름 (모든 색상이 가능하지는 않습니다.)
 const teamCardConfig = [
   {
-    name: "h662",
-    position: "Product Manager",
-    image: "team1.png",
-    color: "blue",
+    name: "권희재",
+    position: "Developer",
+    image: "001.jpg",
+    color: "gray",
     animation: "tada",
   },
   {
-    name: "h663",
-    position: "Frontend",
-    image: "team2.png",
-    color: "yellow",
+    name: "신경아",
+    position: "Manager",
+    image: "002.jpg",
+    color: "gray",
     animation: "tada",
   },
   {
-    name: "h664",
+    name: "조현아",
     position: "Graphic Design",
-    image: "team3.png",
-    color: "green",
+    image: "003.jpg",
+    color: "gray",
     animation: "tada",
   },
   {
-    name: "h665",
-    position: "Smart Contract",
-    image: "team4.png",
-    color: "red",
+    name: "정승익",
+    position: "Metaverse Planner",
+    image: "004.jpg",
+    color: "gray",
     animation: "tada",
   },
 ];
@@ -40,7 +40,7 @@ const Team: FC = () => {
 
   return (
     <Flex minH="100vh" alignItems="center" id="Team" flexDir="column">
-      <Box fontSize="6xl" fontWeight="bold" mt={4}>
+      <Box fontSize="6xl" fontWeight="bold" mt={32}>
         {t("team")}
       </Box>
       <Grid

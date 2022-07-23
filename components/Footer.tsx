@@ -3,7 +3,7 @@ import { FC } from "react";
 
 // @ 팀 주소 및 카피라이트에 관한 정보를 입력합니다.
 const contactInfo =
-  "Team ProjectLion NFT | 443, Teheran-ro, Gangnam-gu, Seoul, Republic of Korea | E-Mail h662@olbm.app";
+  "Team BulsaProject NFT | 443, Teheran-ro, Gangnam-gu, Seoul, Republic of Korea | E-Mail behindname@naver.com";
 const copyRight = "COPYRIGHT © Team ProjectLion NFT. ALL RIGHT RESERVED";
 
 const Footer: FC = () => {
