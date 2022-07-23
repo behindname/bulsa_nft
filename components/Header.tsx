@@ -56,11 +56,11 @@ const Header: FC = () => {
         })}
       </Box>
       <Flex alignItems="center" my={[4, 4, 0]}>
-        <Link href={openseaURL} passHref={true}>
+        <a href={openseaURL} target="_blank" rel="noreferrer">
           <Button variant="ghost" size={["xs", "xs", "sm"]}>
             <Image src="../images/opensea.png" alt="opensea" w={6} />
           </Button>
-        </Link>
+        </a>
         <a href={instagramURL}>
           <Button variant="ghost" size={["xs", "xs", "sm"]}>
             <FaInstagram size={24} />
