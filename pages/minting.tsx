@@ -44,6 +44,8 @@ const Minting: NextPage = () => {
         data: mintNFTContract?.methods.mintNFT().encodeABI(),
       });
 
+      console.log("클레이 스마트 컨트랙트 실행 결과!", response);
+
       if (response?.status) {
         const balanceOf = await mintNFTContract?.methods
           .balanceOf(account)
@@ -59,8 +61,11 @@ const Minting: NextPage = () => {
               .tokenURI(myNewNFT)
               .call();
 
+            console.log("tokenURI값!", tokenURI);
+
             if (tokenURI) {
               const imageResponse = await axios.get(tokenURI);
+              console.log("이미지 response", imageResponse);
 
               if (imageResponse.status === 200) {
                 setNewNFT(imageResponse.data);
