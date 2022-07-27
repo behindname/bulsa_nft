@@ -11,6 +11,7 @@ const Minting: NextPage = () => {
   const [account, setAccount] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [newNFT, setNewNFT] = useState<any>(undefined);
+  const [tempNFTImage, setTempNFTImage] = useState<string>("");
 
   const { caver, mintNFTContract } = useCaver();
 
@@ -70,6 +71,10 @@ const Minting: NextPage = () => {
               if (imageResponse.status === 200) {
                 setNewNFT(imageResponse.data);
               }
+            } else {
+              const tempImageUrl =
+                "https://gateway.pinata.cloud/ipfs/QmbVnfHkj2y51Gh9pQQEtvKLzDAo748ZdGcMDGupJB7W6c/4.jpeg";
+              setTempNFTImage(tempImageUrl);
             }
           }
         }
@@ -126,17 +131,23 @@ const Minting: NextPage = () => {
         >
           {newNFT ? (
             <Image
-              src={newNFT.image}
+              src={newNFT?.image}
               borderRadius="lg"
               fallbackSrc="../images/loading.png"
               alt="nft"
             />
           ) : (
-            <Image
-              src="../images/loading.png"
-              borderRadius="lg"
-              alt="loading"
-            />
+            <>
+              {tempNFTImage ? (
+                <Image src={tempNFTImage} borderRadius="lg" alt="loading" />
+              ) : (
+                <Image
+                  src="../images/loading.png"
+                  borderRadius="lg"
+                  alt="loading"
+                />
+              )}
+            </>
           )}
         </Flex>
         <Flex ml={8} direction="column" minH={512} minW={300}>
@@ -160,22 +171,10 @@ const Minting: NextPage = () => {
                 </Flex>
                 <Flex fontSize="xl" mt={4}>
                   <Text w="50%">Description</Text>
-                  <Text>: </Text>
+                  <Text fontSize="xl" mt={4}>
+                    {newNFT.description}
+                  </Text>
                 </Flex>
-                <Text fontSize="xl" mt={4}>
-                  {newNFT.description}
-                </Text>
-                <Flex fontSize="xl" mt={4}>
-                  <Text w="50%">Attributes</Text>
-                </Flex>
-                {newNFT.attributes.map((v: any, i: number) => {
-                  return (
-                    <Flex key={i} fontSize="xl" mt={4}>
-                      <Text w="50%">{v.trait_type}</Text>
-                      <Text>: {v.value}</Text>
-                    </Flex>
-                  );
-                })}
               </>
             ) : (
               <>
@@ -186,9 +185,6 @@ const Minting: NextPage = () => {
                 <Flex fontSize="xl" mt={4}>
                   <Text w="50%">Description</Text>
                   <Text>:</Text>
-                </Flex>
-                <Flex fontSize="xl" mt={4}>
-                  <Text w="50%">Attributes</Text>
                 </Flex>
               </>
             )}
