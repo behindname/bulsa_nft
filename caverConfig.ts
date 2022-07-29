@@ -2,10 +2,10 @@ import { AbiItem } from "caver-js";
 
 // @ 스마트 컨트랙트의 주소를 기입 합니다.
 //조이락 선생님 복주머니 작품!
-export const MINT_NFT_ADDRESS = "0xFcdb358fD1103c10e6Ce935fD8B1F0c2e42651D1";
+export const MINT_NFT_ADDRESS = "0x112552020b4bF372f298eD11De91A43e7b749eDD";
 
 // @ Klaytn IDE로 부터 ABI를 가져옵니다.
-export const MINT_NFT_ABI: AbiItem[] =
+export const MINT_NFT_ABI: AbiItem[] = 
 [
 	{
 		"inputs": [
@@ -17,6 +17,11 @@ export const MINT_NFT_ABI: AbiItem[] =
 			{
 				"internalType": "string",
 				"name": "_symbol",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_metadataURI",
 				"type": "string"
 			}
 		],
@@ -158,6 +163,19 @@ export const MINT_NFT_ABI: AbiItem[] =
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "batchMintNFT",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "tokenId",
 				"type": "uint256"
 			}
@@ -198,14 +216,8 @@ export const MINT_NFT_ABI: AbiItem[] =
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "metadataURIs",
+		"inputs": [],
+		"name": "metadataURI",
 		"outputs": [
 			{
 				"internalType": "string",
@@ -340,24 +352,6 @@ export const MINT_NFT_ABI: AbiItem[] =
 			}
 		],
 		"name": "setApprovalForAll",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_metadataURI",
-				"type": "string"
-			}
-		],
-		"name": "setTokenURI",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

@@ -156,7 +156,7 @@ const Minting: NextPage = () => {
             size="lg"
             colorScheme="green"
             onClick={onClickMint}
-            disabled={account === "" || isLoading}
+            disabled={account === "" || isLoading || !!newNFT?.image}
             isLoading={isLoading}
             loadingText="Loading ..."
           >
