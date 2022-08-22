@@ -5,12 +5,14 @@ import Team from "@components/Team";
 import type { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Title from "@components/Title";
+import MintNFT from "@components/MintNFT";
 
 const Home: NextPage = () => {
   return (
     <>
       <Title />
       <Story />
+      <MintNFT />
       <Team />
       <Footer />
     </>

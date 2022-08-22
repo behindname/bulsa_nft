@@ -13,7 +13,7 @@ const openseaURL = "https://opensea.io/Bulsa-Project";
 const instagramURL = "https://www.instagram.com/irag.jo/";
 
 const Header: FC = () => {
-  const scrollLink = ["Title", "Story", "Team"];
+  const scrollLink = ["Title", "Story", "Mint", "Team"];
 
   const router = useRouter();
 
