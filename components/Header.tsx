@@ -48,7 +48,7 @@ const Header: FC = () => {
         {scrollLink.map((v, i) => {
           return (
             <ScrollLink key={i} to={v} spy={true} smooth={true}>
-              <Button variant="ghost" mx={[0, 0, 8]} size={["xs", "sm", "md"]}>
+              <Button variant="ghost" mx={[8, 8, 8]} size={["xs", "sm", "md"]}>
                 {v}
               </Button>
             </ScrollLink>

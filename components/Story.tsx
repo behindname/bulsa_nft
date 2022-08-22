@@ -6,10 +6,6 @@ import { FC } from "react";
 const storyImage = "bulsa_process.png";
 
 const Story: FC = () => {
-  const { t } = useTranslation("common");
-
-  const { colorMode } = useColorMode();
-
   return (
     <Flex
       minH="100vh"
@@ -17,12 +13,10 @@ const Story: FC = () => {
       alignItems="center"
       flexDir="column"
       id="Story"
-      mt={16}
-      py={16}
       w="full"
     >
-      <Box position="relative">
-        <Image src={`../images/${storyImage}`} borderRadius="xl" alt="story" />
+      <Box position="relative" w="full">
+        <Image src={`../images/${storyImage}`} w="full" alt="story" />
       </Box>
     </Flex>
   );
