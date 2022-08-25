@@ -7,18 +7,13 @@ const storyImage = "bulsa_process.png";
 
 const Story: FC = () => {
   return (
-    <Flex
-      minH="100vh"
-      justifyContent="space-between"
-      alignItems="center"
-      flexDir="column"
-      id="Story"
+    <Image
+      src={`../images/${storyImage}`}
       w="full"
-    >
-      <Box position="relative" w="full">
-        <Image src={`../images/${storyImage}`} w="full" alt="story" />
-      </Box>
-    </Flex>
+      objectFit={["scale-down", "scale-down", "contain", "cover"]}
+      alt="story"
+      id="Story"
+    />
   );
 };
 

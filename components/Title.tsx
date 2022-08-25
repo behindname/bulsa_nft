@@ -7,18 +7,15 @@ const titleImage = "bulsa_begin.png";
 
 const Title: FC = () => {
   return (
-    <Flex
-      maxH="100vh"
-      justifyContent="space-between"
-      alignItems="center"
-      flexDir="column"
+    <Image
+      src={`../images/${titleImage}`}
+      mt={[32, 32, 8, 0]}
+      w={["auto", "auto", "auto", "full"]}
+      h={["100vh", "100vh", "100vh", "auto"]}
+      objectFit={["none", "none", "none", "cover"]}
+      alt="title"
       id="Title"
-      w="full"
-    >
-      <Box position="relative" w="full">
-        <Image src={`../images/${titleImage}`} w="full" alt="title" />
-      </Box>
-    </Flex>
+    />
   );
 };
 
