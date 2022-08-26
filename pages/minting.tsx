@@ -73,7 +73,7 @@ const Minting: NextPage = () => {
               }
             } else {
               const tempImageUrl =
-                "https://gateway.pinata.cloud/ipfs/QmbVnfHkj2y51Gh9pQQEtvKLzDAo748ZdGcMDGupJB7W6c/4.jpeg";
+                "https://gateway.pinata.cloud/ipfs/QmZfMeCpugzT4LSfqC989ZSRu6HRK3cerq2azWphWAJ642/1.png";
               setTempNFTImage(tempImageUrl);
             }
           }
